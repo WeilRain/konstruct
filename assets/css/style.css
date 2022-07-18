@@ -2,6 +2,24 @@
     margin: 0;
 }
 
+/* scrollbar */
+body::-webkit-scrollbar {
+    width: 3px;
+}
+
+body::-webkit-scrollbar-track {
+    background: #171819;
+}
+
+body::-webkit-scrollbar-thumb {
+    background: #ffffff;
+    border-radius: 20px;
+    border: none;
+}
+
+/* end scrollbar */
+
+/* bg */
 .bg {
     background: url(../img/bg.svg);
     background-position: center;
@@ -52,7 +70,7 @@
     color: #FFFFFF;
 }
 
-/* bg */
+/* end bg */
 
 /* navbar */
 
@@ -471,14 +489,14 @@ input {
     margin-right: 0;
 }
 
-.end_footer{
+.end_footer {
     background: #171819;
     height: 60px;
     display: flex;
     justify-content: center;
 }
 
-.end_footer p{
+.end_footer p {
     font-family: 'OpenSans';
     font-size: 11px;
     line-height: 13px;
@@ -486,4 +504,5 @@ input {
     padding-top: 22px;
     color: #FFFFFF;
 }
+
 /* end footer */
