@@ -706,7 +706,7 @@ input {
     .footer_content{
         flex-direction: column;
         align-items: flex-start;
-        padding: 0 0 20px 20px;
+        padding: 20px 0 20px 20px;
     }
     .sub_links{
         padding: 20px 0 20px 0;
