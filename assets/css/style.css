@@ -456,6 +456,12 @@ body::-webkit-scrollbar-thumb {
         margin: 10px 0 0 0;
     }
 }
+
+@media screen and (max-width:400px) {
+    .capab_text_2 p>br{
+        display: none;
+    }
+}
 /* end capabilit */
 
 /* newsletter */
