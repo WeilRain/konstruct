@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
-        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./assets/css/style.css">
     <title>Konstruct</title>
@@ -36,6 +36,7 @@
                 <li><a href="#">WORK</a></li>
                 <li><a href="#">CONTACT</a></li>
             </div>
+            <a class="icon" href="javascript:void(0)"><i id="toggle" class="fa-solid fa-bars"></i></a>
         </div>
     </nav>
     <!-- end navbar -->
@@ -129,8 +130,10 @@
     <section class="newsletter_sign">
         <div class="sign_content">
             <h1>Newsletter Signup</h1>
-            <input type="text" name="email" placeholder="test@youremail.com"> <button class="btn_3"
+            <div class="input">
+                <input type="text" name="email" placeholder="test@youremail.com"><button class="btn_3"
                 type="SIGNUP">SIGNUP</button>
+            </div>
         </div>
     </section>
     <!-- end newsletter -->
@@ -171,7 +174,8 @@
                     <p> info@konstruct.com</p>
                 </div>
                 <div class="sub_social">
-                    <i class="fa-brands fa-facebook-square"></i><i class="fa-brands fa-twitter"></i><i class="fa-brands fa-google"></i>
+                    <i class="fa-brands fa-facebook-square"></i><i class="fa-brands fa-twitter"></i><i
+                        class="fa-brands fa-google"></i>
                 </div>
             </div>
         </div>
@@ -180,6 +184,22 @@
         </div>
     </footer>
     <!-- end footer -->
+
+    <script>
+        let x = document.querySelector(".nav")
+        let toggle = document.querySelector("#toggle")
+       function response(){
+        if(x.className == "nav"){
+            x.className += " responsive"
+        }
+
+        else{
+            x.className = "nav"
+        }
+       }
+
+       toggle.addEventListener("click", response)
+    </script>
 </body>
 
 </html>

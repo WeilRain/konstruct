@@ -44,10 +44,11 @@ body::-webkit-scrollbar-thumb {
 
 .bg_text h1 {
     font-family: 'BebasNeueBold';
-    font-size: 60px;
+    font-size: 6vh;
     line-height: 70px;
     letter-spacing: 5.70937px;
     color: #FFFFFF;
+    text-align: center;
 }
 
 .bg_text p {
@@ -68,8 +69,41 @@ body::-webkit-scrollbar-thumb {
     text-align: center;
     letter-spacing: 3.7px;
     color: #FFFFFF;
+    transition: all 3s ease;
+    animation: test 4s infinite;
+    animation-direction: alternate-reverse;
+    animation-iteration-count: calc(100*2000);
 }
 
+@keyframes test {
+    from {
+        transform: translateY(0px);
+
+    }
+
+    to {
+        transform: translateY(10px);
+    }
+
+}
+
+@media screen and (max-width:850px) {
+    .bg_text h1{
+        font-size: 4vh;
+    }  
+}
+
+@media screen and (max-width:602px) {
+    .bg_text{
+        padding-top: 250px;
+    }
+}
+
+@media screen and (max-width:343px) {
+    .bg_text{
+        padding-top: 200px;
+    }
+}
 /* end bg */
 
 /* navbar */
@@ -77,20 +111,23 @@ body::-webkit-scrollbar-thumb {
 .nav {
     background: #FFFFFF;
     border: 1px solid #E6E6E6;
-    height: 65px;
+    padding: 25px 0 25px 0;
     display: flex;
     justify-content: space-around;
     align-items: center;
+    transition: 0.7s ease;
 }
 
 .navbar {
     display: flex;
     flex-direction: row;
+    transition: 0.7s ease;
 }
 
 .navbar li {
     list-style-type: none;
     padding-left: 48px;
+    transition: 0.7s ease;
 }
 
 
@@ -103,10 +140,72 @@ body::-webkit-scrollbar-thumb {
     letter-spacing: 1.09091px;
     color: #48555B;
     transition: 0.7s ease;
+
 }
 
 .navbar a:hover {
     color: #00A4E5;
+}
+
+
+.icon {
+    display: none;
+
+}
+
+.icon i {
+    position: relative;
+    font-size: 20px;
+    color: #00A4E5;
+    transition: 0.7s ease;
+}
+
+.responsive{
+    transition: 0.7s ease;
+}
+@media screen and (max-width:900px) {
+    .nav div:not(:first-child) {
+        display: none;
+    }
+
+    .icon {
+        display: block;
+    }
+
+    .icon i {
+        position: absolute;
+        bottom: 66px;
+        right: 0;
+        margin-right: 20px;
+    }
+
+    .nav {
+        justify-content: space-between;
+    }
+    .nav_img{
+        margin-left: 20px;
+        margin-bottom: 10px;
+    }
+}
+
+
+@media screen and (max-width:900px) {
+    .nav.responsive div {
+        display: flex;
+    }
+
+    .navbar {
+        flex-direction: column;
+    }
+    .navbar li{
+        padding: 12px 0 0 20px;
+    }
+
+    .responsive {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
 }
 
 /* end navabr */
@@ -125,6 +224,7 @@ body::-webkit-scrollbar-thumb {
 .store_img {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
 }
 
 .store_txt {
@@ -197,6 +297,40 @@ body::-webkit-scrollbar-thumb {
     color: rgba(22, 172, 232, 1);
 }
 
+@media screen and (max-width:945px) {
+    .store{
+        flex-direction: column;
+        padding-top: 40px;
+    }
+    .store_text{
+        padding: 0 0 15px 0;
+    }
+    .sub_store:first-child{
+        padding-left: 0;
+    }
+}
+
+@media screen and (max-width:570px) {
+    .store_img, .sub_store{
+        margin-top: 10px;
+    }
+    .store_img{
+        flex-direction: column;
+        justify-content: center;
+    }
+    .sub_store{
+        padding-left: 0;
+    }
+}
+
+@media screen and (max-width:340px) {
+    .store_text p>br{
+        display: none;
+    }
+    .store_text h4{
+        padding-bottom: 20px;
+    }
+}
 /* end our store */
 
 /* capabilit */
@@ -210,6 +344,7 @@ body::-webkit-scrollbar-thumb {
 .capab_text_2 {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     padding-left: 125px;
 }
 
@@ -289,6 +424,38 @@ body::-webkit-scrollbar-thumb {
     color: #48555B;
 }
 
+@media screen and (max-width:930px) {
+    .capabilit {
+        flex-direction: column;
+    }
+    
+    .capab_text{
+        padding-bottom: 20px;
+    }
+    .capab_text_2{
+        padding-left: 0;
+    }
+
+    .card_capabilit{
+        flex-direction: column;
+        align-items: center;
+    }
+    .card_content{
+        margin: 15px 0 0 0;
+        width: 270px;
+    }
+}
+
+@media screen and (max-width:600px) {
+    .capab_text_2{
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .btn_1{
+        margin: 10px 0 0 0;
+    }
+}
 /* end capabilit */
 
 /* newsletter */
@@ -373,10 +540,30 @@ input {
     outline: none;
     background: #FFFFFF;
     border: 1px solid #979797;
-    ;
     width: 250px;
     height: 40px;
     padding-left: 16px;
+}
+
+@media screen and (max-width:660px) {
+    .sign_content{
+        flex-direction: column;
+        text-align: center;
+    }
+    .newsletter_sign{
+        height: auto;
+    }
+    .sign_content h1{
+        padding: 0 0 20px 0;
+    }
+    .input{
+        padding-bottom: 20px;
+    }
+}
+@media screen and (max-width:410px) {
+    .btn_3{
+        width: 60px;
+}
 }
 
 /* newsletter */
@@ -392,6 +579,7 @@ input {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-wrap: wrap;
     padding-top: 45px;
 }
 
@@ -505,4 +693,24 @@ input {
     color: #FFFFFF;
 }
 
+@media screen and (max-width:866px) {
+    .footer{
+        height: auto;
+    }
+    .text_3{
+        padding: 20px 0 20px 0;
+    }
+}
+
+@media screen and (max-width:590px) {
+    .footer_content{
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0 0 20px 20px;
+    }
+    .sub_links{
+        padding: 20px 0 20px 0;
+    }
+    
+}
 /* end footer */
